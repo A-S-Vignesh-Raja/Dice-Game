@@ -4,54 +4,64 @@ let isplayer=null;
 let iscomputer=null;
     
 document.querySelector(".btn").addEventListener("click",function(){
-    var randomNumber1=Math.random()*6;
-    a=Math.floor(randomNumber1)+1;
-    if(a===1){
+    var randomNumber1=Math.random();
+    randomNumber1=Math.floor(randomNumber1*6)+1;
+    /*document.querySelector("img").setAttribute("src","dice" + randomNUmber1 + ".png");*/
+    if(randomNumber1==1){
         document.querySelector(".img1").setAttribute("src","dice1.png");
     }
-    else if(a===2){
+    else if(randomNumber1==2){
         document.querySelector(".img1").setAttribute("src","dice2.png");
     }
-    else if(a===3){
+    else if(randomNumber1==3){
         document.querySelector(".img1").setAttribute("src","dice3.png");
     }
-    else if(a===4){
+    else if(randomNumber1==4){
         document.querySelector(".img1").setAttribute("src","dice4.png");
     }
-    else if(a===5){
+    else if(randomNumber1==5){
         document.querySelector(".img1").setAttribute("src","dice5.png");
     }
-    var randomNumber2=Math.random()*6;
-    b=Math.floor(randomNumber2)+1;
-    if(b===1){
+    else if(randomNumber1==6){
+        document.querySelector(".img1").setAttribute("src","dice6.png");
+    }
+    var randomNumber2=Math.random();
+    randomNumber2=Math.floor(randomNumber2*6)+1;
+   /* document.querySelector(".img2").setAttribute("src","dice" + randomNUmber2 + ".png");*/
+    if(randomNumber2==1){
         document.querySelector(".img2").setAttribute("src","dice1.png");
     }
-    else if(b===2){
+    else if(randomNumber2==2){
         document.querySelector(".img2").setAttribute("src","dice2.png");
     }
-    else if(b===3){
+    else if(randomNumber2==3){
         document.querySelector(".img2").setAttribute("src","dice3.png");
     }
-    else if(b===4){
+    else if(randomNumber2==4){
         document.querySelector(".img2").setAttribute("src","dice4.png");
     }
-    else if(b===5){
+    else if(randomNumber2==5){
         document.querySelector(".img2").setAttribute("src","dice5.png");
     }
-    if(a>b){
+    else if(randomNumber2==6){
+        document.querySelector(".img2").setAttribute("src","dice6.png");
+    }
+    if(randomNumber1>randomNumber2){
         document.querySelector("h1").innerHTML="Player Wins 🚩";
         player++;
     }
-    else if(b>a){
+    else if(randomNumber2>randomNumber1){
         document.querySelector("h1").innerHTML="Computer Wins 😎";
         computer++;
     }
-    else if(a===b){
+    else if(randomNumber1==randomNumber2){
         document.querySelector("h1").innerHTML="Draw🥲😂";
     }
     
     document.querySelector(".player").innerHTML="Player = "+player;
     document.querySelector(".Computer").innerHTML="Computer = "+computer;
+
+    
     
     
 });
